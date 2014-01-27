@@ -1,0 +1,13 @@
+:hierarchy:
+  - "fqdns/%{::fqdn}"
+  - "hostgroups/%{::hostgroup}"
+  - "zones/%{::zone}"
+  - users
+  - common
+
+:backends:
+  - yaml
+
+:yaml:
+  :datadir: /opt/occam/puppet/hiera
+:logger: console

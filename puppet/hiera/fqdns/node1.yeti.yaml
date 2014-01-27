@@ -1,0 +1,6 @@
+#### YAML ####
+
+#profile::base::stringtest: "Testing Node1 Value"
+#profile::base::listtest:
+#  - "Value1 : Node1"
+#  - "Value2 : Node1"

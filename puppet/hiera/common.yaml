@@ -1,0 +1,6 @@
+#### YAML ####
+
+#profile::base::stringtest: "Testing Common Value"
+#profile::base::listtest:
+#  - 'Value1 : Common'
+#  - 'Value2 : Common'
