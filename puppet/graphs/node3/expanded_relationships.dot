@@ -1,15 +1,5 @@
 digraph Expanded_relationships {
     label = "Expanded_relationships"
-    "Notify[Value of stringtest: Testing Common Value]" [
-        fontsize = 8,
-        label = "Notify[Value of stringtest: Testing Common Value]"
-    ]
-
-    "File[/etc/]" [
-        fontsize = 8,
-        label = "File[/etc/]"
-    ]
-
     "Schedule[puppet]" [
         fontsize = 8,
         label = "Schedule[puppet]"
@@ -95,6 +85,16 @@ digraph Expanded_relationships {
         label = "Class[Profile::Base]"
     ]
 
+    "Class[Profile::Riak::Member]" [
+        fontsize = 8,
+        label = "Class[Profile::Riak::Member]"
+    ]
+
+    "Class[Profile::Riak::Member]" [
+        fontsize = 8,
+        label = "Class[Profile::Riak::Member]"
+    ]
+
     "Node[noded]" [
         fontsize = 8,
         label = "Node[noded]"
@@ -103,14 +103,6 @@ digraph Expanded_relationships {
     "Node[noded]" [
         fontsize = 8,
         label = "Node[noded]"
-    ]
-
-    "Class[Profile::Base]" -> "Notify[Value of stringtest: Testing Common Value]" [
-        fontsize = 8
-    ]
-
-    "Class[Profile::Base]" -> "File[/etc/]" [
-        fontsize = 8
     ]
 
     "Stage[main]" -> "Class[Settings]" [
@@ -137,6 +129,10 @@ digraph Expanded_relationships {
         fontsize = 8
     ]
 
+    "Class[Profile::Riak::Member]" -> "Stage[main]" [
+        fontsize = 8
+    ]
+
     "Stage[main]" -> "Class[Main]" [
         fontsize = 8
     ]
@@ -157,11 +153,15 @@ digraph Expanded_relationships {
         fontsize = 8
     ]
 
-    "Notify[Value of stringtest: Testing Common Value]" -> "Class[Profile::Base]" [
+    "Class[Profile::Base]" -> "Class[Profile::Base]" [
         fontsize = 8
     ]
 
-    "File[/etc/]" -> "Class[Profile::Base]" [
+    "Stage[main]" -> "Class[Profile::Riak::Member]" [
+        fontsize = 8
+    ]
+
+    "Class[Profile::Riak::Member]" -> "Class[Profile::Riak::Member]" [
         fontsize = 8
     ]
 

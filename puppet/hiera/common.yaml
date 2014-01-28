@@ -4,3 +4,18 @@
 #profile::base::listtest:
 #  - 'Value1 : Common'
 #  - 'Value2 : Common'
+
+profile::riak::member::clusters:
+  cluster1:
+    - node1.yeti
+    - node2.yeti
+    - node3.yeti
+  cluster2:
+    - node4.yeti
+    - node5.yeti
+    - node6.yeti
+  cluster3:
+    - node7.yeti
+    - node8.yeti
+    - node9.yeti
+    - node10.yeti

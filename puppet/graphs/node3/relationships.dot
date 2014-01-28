@@ -30,14 +30,9 @@ digraph Relationships {
         label = "Class[Profile::Base]"
     ]
 
-    "Notify[Value of stringtest: Testing Common Value]" [
+    "Class[Profile::Riak::Member]" [
         fontsize = 8,
-        label = "Notify[Value of stringtest: Testing Common Value]"
-    ]
-
-    "File[/etc/]" [
-        fontsize = 8,
-        label = "File[/etc/]"
+        label = "Class[Profile::Riak::Member]"
     ]
 
     "Schedule[puppet]" [

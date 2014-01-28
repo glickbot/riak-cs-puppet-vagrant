@@ -30,14 +30,9 @@ digraph Resources {
         label = "Class[Profile::Base]"
     ]
 
-    "Notify[Value of stringtest: Testing Common Value]" [
+    "Class[Profile::Riak::Member]" [
         fontsize = 8,
-        label = "Notify[Value of stringtest: Testing Common Value]"
-    ]
-
-    "File[/etc/]" [
-        fontsize = 8,
-        label = "File[/etc/]"
+        label = "Class[Profile::Riak::Member]"
     ]
 
     "Schedule[puppet]" [
@@ -95,11 +90,7 @@ digraph Resources {
         fontsize = 8
     ]
 
-    "Class[Profile::Base]" -> "Notify[Value of stringtest: Testing Common Value]" [
-        fontsize = 8
-    ]
-
-    "Class[Profile::Base]" -> "File[/etc/]" [
+    "Stage[main]" -> "Class[Profile::Riak::Member]" [
         fontsize = 8
     ]
 

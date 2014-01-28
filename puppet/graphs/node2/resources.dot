@@ -30,6 +30,41 @@ digraph Resources {
         label = "Class[Profile::Base]"
     ]
 
+    "Class[Profile::Riak::Member]" [
+        fontsize = 8,
+        label = "Class[Profile::Riak::Member]"
+    ]
+
+    "Class[Profile::Riak::Stepa]" [
+        fontsize = 8,
+        label = "Class[Profile::Riak::Stepa]"
+    ]
+
+    "File[/tmp/stepa]" [
+        fontsize = 8,
+        label = "File[/tmp/stepa]"
+    ]
+
+    "Class[Profile::Riak::Stepb]" [
+        fontsize = 8,
+        label = "Class[Profile::Riak::Stepb]"
+    ]
+
+    "File[/tmp/stepb]" [
+        fontsize = 8,
+        label = "File[/tmp/stepb]"
+    ]
+
+    "Class[Profile::Riak::Stepc]" [
+        fontsize = 8,
+        label = "Class[Profile::Riak::Stepc]"
+    ]
+
+    "Exec[stepc exec]" [
+        fontsize = 8,
+        label = "Exec[stepc exec]"
+    ]
+
     "Schedule[puppet]" [
         fontsize = 8,
         label = "Schedule[puppet]"
@@ -82,6 +117,34 @@ digraph Resources {
     ]
 
     "Stage[main]" -> "Class[Profile::Base]" [
+        fontsize = 8
+    ]
+
+    "Stage[main]" -> "Class[Profile::Riak::Member]" [
+        fontsize = 8
+    ]
+
+    "Stage[main]" -> "Class[Profile::Riak::Stepa]" [
+        fontsize = 8
+    ]
+
+    "Class[Profile::Riak::Stepa]" -> "File[/tmp/stepa]" [
+        fontsize = 8
+    ]
+
+    "Stage[main]" -> "Class[Profile::Riak::Stepb]" [
+        fontsize = 8
+    ]
+
+    "Class[Profile::Riak::Stepb]" -> "File[/tmp/stepb]" [
+        fontsize = 8
+    ]
+
+    "Stage[main]" -> "Class[Profile::Riak::Stepc]" [
+        fontsize = 8
+    ]
+
+    "Class[Profile::Riak::Stepc]" -> "Exec[stepc exec]" [
         fontsize = 8
     ]
 

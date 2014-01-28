@@ -1,5 +1,20 @@
 digraph Expanded_relationships {
     label = "Expanded_relationships"
+    "File[/tmp/stepa]" [
+        fontsize = 8,
+        label = "File[/tmp/stepa]"
+    ]
+
+    "File[/tmp/stepb]" [
+        fontsize = 8,
+        label = "File[/tmp/stepb]"
+    ]
+
+    "Exec[stepc exec]" [
+        fontsize = 8,
+        label = "Exec[stepc exec]"
+    ]
+
     "Schedule[puppet]" [
         fontsize = 8,
         label = "Schedule[puppet]"
@@ -85,6 +100,46 @@ digraph Expanded_relationships {
         label = "Class[Profile::Base]"
     ]
 
+    "Class[Profile::Riak::Member]" [
+        fontsize = 8,
+        label = "Class[Profile::Riak::Member]"
+    ]
+
+    "Class[Profile::Riak::Member]" [
+        fontsize = 8,
+        label = "Class[Profile::Riak::Member]"
+    ]
+
+    "Class[Profile::Riak::Stepa]" [
+        fontsize = 8,
+        label = "Class[Profile::Riak::Stepa]"
+    ]
+
+    "Class[Profile::Riak::Stepa]" [
+        fontsize = 8,
+        label = "Class[Profile::Riak::Stepa]"
+    ]
+
+    "Class[Profile::Riak::Stepb]" [
+        fontsize = 8,
+        label = "Class[Profile::Riak::Stepb]"
+    ]
+
+    "Class[Profile::Riak::Stepb]" [
+        fontsize = 8,
+        label = "Class[Profile::Riak::Stepb]"
+    ]
+
+    "Class[Profile::Riak::Stepc]" [
+        fontsize = 8,
+        label = "Class[Profile::Riak::Stepc]"
+    ]
+
+    "Class[Profile::Riak::Stepc]" [
+        fontsize = 8,
+        label = "Class[Profile::Riak::Stepc]"
+    ]
+
     "Node[noded]" [
         fontsize = 8,
         label = "Node[noded]"
@@ -93,6 +148,18 @@ digraph Expanded_relationships {
     "Node[noded]" [
         fontsize = 8,
         label = "Node[noded]"
+    ]
+
+    "Class[Profile::Riak::Stepa]" -> "File[/tmp/stepa]" [
+        fontsize = 8
+    ]
+
+    "Class[Profile::Riak::Stepb]" -> "File[/tmp/stepb]" [
+        fontsize = 8
+    ]
+
+    "Class[Profile::Riak::Stepc]" -> "Exec[stepc exec]" [
+        fontsize = 8
     ]
 
     "Stage[main]" -> "Class[Settings]" [
@@ -119,6 +186,22 @@ digraph Expanded_relationships {
         fontsize = 8
     ]
 
+    "Class[Profile::Riak::Member]" -> "Stage[main]" [
+        fontsize = 8
+    ]
+
+    "Class[Profile::Riak::Stepa]" -> "Stage[main]" [
+        fontsize = 8
+    ]
+
+    "Class[Profile::Riak::Stepb]" -> "Stage[main]" [
+        fontsize = 8
+    ]
+
+    "Class[Profile::Riak::Stepc]" -> "Stage[main]" [
+        fontsize = 8
+    ]
+
     "Stage[main]" -> "Class[Main]" [
         fontsize = 8
     ]
@@ -140,6 +223,46 @@ digraph Expanded_relationships {
     ]
 
     "Class[Profile::Base]" -> "Class[Profile::Base]" [
+        fontsize = 8
+    ]
+
+    "Stage[main]" -> "Class[Profile::Riak::Member]" [
+        fontsize = 8
+    ]
+
+    "Class[Profile::Riak::Member]" -> "Class[Profile::Riak::Member]" [
+        fontsize = 8
+    ]
+
+    "Stage[main]" -> "Class[Profile::Riak::Stepa]" [
+        fontsize = 8
+    ]
+
+    "File[/tmp/stepa]" -> "Class[Profile::Riak::Stepa]" [
+        fontsize = 8
+    ]
+
+    "Stage[main]" -> "Class[Profile::Riak::Stepb]" [
+        fontsize = 8
+    ]
+
+    "Class[Profile::Riak::Stepa]" -> "Class[Profile::Riak::Stepb]" [
+        fontsize = 8
+    ]
+
+    "File[/tmp/stepb]" -> "Class[Profile::Riak::Stepb]" [
+        fontsize = 8
+    ]
+
+    "Stage[main]" -> "Class[Profile::Riak::Stepc]" [
+        fontsize = 8
+    ]
+
+    "Class[Profile::Riak::Stepb]" -> "Class[Profile::Riak::Stepc]" [
+        fontsize = 8
+    ]
+
+    "Exec[stepc exec]" -> "Class[Profile::Riak::Stepc]" [
         fontsize = 8
     ]
 

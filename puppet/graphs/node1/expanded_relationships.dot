@@ -1,18 +1,28 @@
 digraph Expanded_relationships {
     label = "Expanded_relationships"
-    "Notify[Value of stringtest: Testing Node1 Value]" [
+    "Exec[sleep stepa]" [
         fontsize = 8,
-        label = "Notify[Value of stringtest: Testing Node1 Value]"
+        label = "Exec[sleep stepa]"
     ]
 
-    "File[/tmp/stringtest]" [
+    "File[/tmp/stepa]" [
         fontsize = 8,
-        label = "File[/tmp/stringtest]"
+        label = "File[/tmp/stepa]"
     ]
 
-    "File[/tmp/firstitem]" [
+    "Exec[sleep stepb]" [
         fontsize = 8,
-        label = "File[/tmp/firstitem]"
+        label = "Exec[sleep stepb]"
+    ]
+
+    "File[/tmp/stepb]" [
+        fontsize = 8,
+        label = "File[/tmp/stepb]"
+    ]
+
+    "Exec[exec stepd]" [
+        fontsize = 8,
+        label = "Exec[exec stepd]"
     ]
 
     "Schedule[puppet]" [
@@ -100,6 +110,46 @@ digraph Expanded_relationships {
         label = "Class[Profile::Base]"
     ]
 
+    "Class[Profile::Riak::Member]" [
+        fontsize = 8,
+        label = "Class[Profile::Riak::Member]"
+    ]
+
+    "Class[Profile::Riak::Member]" [
+        fontsize = 8,
+        label = "Class[Profile::Riak::Member]"
+    ]
+
+    "Class[Profile::Riak::Stepa]" [
+        fontsize = 8,
+        label = "Class[Profile::Riak::Stepa]"
+    ]
+
+    "Class[Profile::Riak::Stepa]" [
+        fontsize = 8,
+        label = "Class[Profile::Riak::Stepa]"
+    ]
+
+    "Class[Profile::Riak::Stepb]" [
+        fontsize = 8,
+        label = "Class[Profile::Riak::Stepb]"
+    ]
+
+    "Class[Profile::Riak::Stepb]" [
+        fontsize = 8,
+        label = "Class[Profile::Riak::Stepb]"
+    ]
+
+    "Class[Profile::Riak::Stepd]" [
+        fontsize = 8,
+        label = "Class[Profile::Riak::Stepd]"
+    ]
+
+    "Class[Profile::Riak::Stepd]" [
+        fontsize = 8,
+        label = "Class[Profile::Riak::Stepd]"
+    ]
+
     "Node[noded]" [
         fontsize = 8,
         label = "Node[noded]"
@@ -110,15 +160,31 @@ digraph Expanded_relationships {
         label = "Node[noded]"
     ]
 
-    "Class[Profile::Base]" -> "Notify[Value of stringtest: Testing Node1 Value]" [
+    "Class[Profile::Riak::Stepa]" -> "Exec[sleep stepa]" [
         fontsize = 8
     ]
 
-    "Class[Profile::Base]" -> "File[/tmp/stringtest]" [
+    "Exec[sleep stepa]" -> "File[/tmp/stepa]" [
         fontsize = 8
     ]
 
-    "Class[Profile::Base]" -> "File[/tmp/firstitem]" [
+    "Class[Profile::Riak::Stepa]" -> "File[/tmp/stepa]" [
+        fontsize = 8
+    ]
+
+    "Class[Profile::Riak::Stepb]" -> "Exec[sleep stepb]" [
+        fontsize = 8
+    ]
+
+    "Exec[sleep stepb]" -> "File[/tmp/stepb]" [
+        fontsize = 8
+    ]
+
+    "Class[Profile::Riak::Stepb]" -> "File[/tmp/stepb]" [
+        fontsize = 8
+    ]
+
+    "Class[Profile::Riak::Stepd]" -> "Exec[exec stepd]" [
         fontsize = 8
     ]
 
@@ -146,6 +212,22 @@ digraph Expanded_relationships {
         fontsize = 8
     ]
 
+    "Class[Profile::Riak::Member]" -> "Stage[main]" [
+        fontsize = 8
+    ]
+
+    "Class[Profile::Riak::Stepa]" -> "Stage[main]" [
+        fontsize = 8
+    ]
+
+    "Class[Profile::Riak::Stepb]" -> "Stage[main]" [
+        fontsize = 8
+    ]
+
+    "Class[Profile::Riak::Stepd]" -> "Stage[main]" [
+        fontsize = 8
+    ]
+
     "Stage[main]" -> "Class[Main]" [
         fontsize = 8
     ]
@@ -166,15 +248,55 @@ digraph Expanded_relationships {
         fontsize = 8
     ]
 
-    "Notify[Value of stringtest: Testing Node1 Value]" -> "Class[Profile::Base]" [
+    "Class[Profile::Base]" -> "Class[Profile::Base]" [
         fontsize = 8
     ]
 
-    "File[/tmp/stringtest]" -> "Class[Profile::Base]" [
+    "Stage[main]" -> "Class[Profile::Riak::Member]" [
         fontsize = 8
     ]
 
-    "File[/tmp/firstitem]" -> "Class[Profile::Base]" [
+    "Class[Profile::Riak::Member]" -> "Class[Profile::Riak::Member]" [
+        fontsize = 8
+    ]
+
+    "Stage[main]" -> "Class[Profile::Riak::Stepa]" [
+        fontsize = 8
+    ]
+
+    "Exec[sleep stepa]" -> "Class[Profile::Riak::Stepa]" [
+        fontsize = 8
+    ]
+
+    "File[/tmp/stepa]" -> "Class[Profile::Riak::Stepa]" [
+        fontsize = 8
+    ]
+
+    "Stage[main]" -> "Class[Profile::Riak::Stepb]" [
+        fontsize = 8
+    ]
+
+    "Class[Profile::Riak::Stepa]" -> "Class[Profile::Riak::Stepb]" [
+        fontsize = 8
+    ]
+
+    "Exec[sleep stepb]" -> "Class[Profile::Riak::Stepb]" [
+        fontsize = 8
+    ]
+
+    "File[/tmp/stepb]" -> "Class[Profile::Riak::Stepb]" [
+        fontsize = 8
+    ]
+
+    "Stage[main]" -> "Class[Profile::Riak::Stepd]" [
+        fontsize = 8
+    ]
+
+    "Class[Profile::Riak::Stepb]" -> "Class[Profile::Riak::Stepd]" [
+        fontsize = 8
+    ]
+
+    "Exec[exec stepd]" -> "Class[Profile::Riak::Stepd]" [
         fontsize = 8
     ]
 
