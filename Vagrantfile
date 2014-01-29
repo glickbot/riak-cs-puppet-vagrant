@@ -3,7 +3,7 @@
 
 # Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
 VAGRANTFILE_API_VERSION = "2"
-NODES = 10
+NODES = 4
 BASEIP = 5
 IP_PRE = "10.42.0."
 DOMAIN = "yeti"

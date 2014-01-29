@@ -5,7 +5,7 @@
 #  - 'Value1 : Common'
 #  - 'Value2 : Common'
 
-profile::riak::member::clusters:
+profile::riak::cluster::clusters:
   cluster1:
     - node1.yeti
     - node2.yeti

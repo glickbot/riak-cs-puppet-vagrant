@@ -3,7 +3,7 @@
 class profile::riak::stanchion (
     $riakcs_admin_key = MTCJNUVLE8R4GQNNDNC1,
     $riakcs_secret = 'nslAllQMx1IUN6cXnJOJa3a3eK9Byua-P0jGVQ==',
-    $riak_address = $::ipaddress,
+    $riak_address = '127.0.0.1',
     $riak_hostname = $::fqdn,
     $riak_pb_port = 8087,
     $erlang_cookie = riak,
@@ -16,6 +16,8 @@ class profile::riak::stanchion (
     ulimit_etc_default  => true,
     cfg                 => {
       stanchion         => {
+      riak_ip           => $riak_address,
+      riak_pb_port      => $riak_pb_port,
         admin_key       => $riakcs_admin_key,
         admin_secret    => $riakcs_secret,
       },

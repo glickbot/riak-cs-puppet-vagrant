@@ -13,7 +13,7 @@
 # [riak_cs_ebin_path] Location of Riak CS ebin files for multibackend config
 
 class profile::riak::riak_kv (
-    $riak_address = $::ipaddress,
+    $riak_address = '127.0.0.1',
     $riak_hostname = $::fqdn,
     $riak_http_port = 8098,
     $riak_pb_port = 8087,
@@ -35,6 +35,9 @@ class profile::riak::riak_kv (
       },
       riak_core                     => {
         ring_creation_size          => $riak_ring_size,
+        http               => {
+        "__string_${$riak_address}" => $riak_http_port,
+        },
         default_bucket_props        => {
           allow_mult                => true
         },
