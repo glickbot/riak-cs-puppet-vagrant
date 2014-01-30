@@ -7,10 +7,10 @@ nodepre = 'riak@'
 address = "<%= scope.lookupvar('profile::riak::riak_kv::riak_address') %>"
 port = "<%= scope.lookupvar('profile::riak::riak_kv::riak_http_port') %>"
 url = URI("http://#{address}:#{port}/stats")
-defined_hostnames = <%= scope.lookupvar('profile::riak::cluster::cluster_node_list') %>
+cluster_data = <%= clusters %>
+cluster = "<%= cluster %>"
+defined_hostnames = cluster_data[cluster]
 defined_nodenames = defined_hostnames.collect {|h| nodepre + h }
-primary_node = "<%= scope.lookupvar('profile::riak::cluster::riak_hostname_first') %>"
-#hostname_pat = /\{'[^'@]*@([^']*)',[0-9]+\}/
 nodename_pat = /\{'([^']*)',[0-9]+\}/
 
 begin
@@ -20,8 +20,6 @@ rescue StandardError => e
 end
 stats = JSON.parse(json)
 
-
-#valid_hostnames = stats['ring_ownership'].scan(hostname_pat).flatten
 valid_nodenames = stats['ring_ownership'].scan(nodename_pat).flatten
 joined_nodenames = stats['ring_members']
 
@@ -42,8 +40,8 @@ when "all_defined_have_joined"
   return_res (defined_nodenames - joined_nodenames).length == 0
 when "all_joined_are_valid"
   return_res (joined_nodenames - valid_nodenames).length == 0
-when "is_in_correct_cluster"
-  return_res joined_nodenames.grep(/^#{primary_node}$/i).count == 1
+#when "is_in_correct_cluster"
+  #return_res joined_nodenames.grep(/^#{primary_node}$/i).count == 1
 when "is_only_member_in_cluster"
   return_res joined_nodenames.length == 1
 when "debug"
