@@ -1,3 +1,4 @@
 .vagrant
 puppet/graphs/*
 system/etc/hosts.d/*
+*.swp
