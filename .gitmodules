@@ -1,3 +1,6 @@
 [submodule "puppet/modules/riak"]
 	path = puppet/modules/riak
 	url = https://github.com/basho/puppet-riak.git
+[submodule "puppet/modules/stdlib"]
+	path = puppet/modules/stdlib
+	url = https://github.com/puppetlabs/puppetlabs-stdlib
