@@ -26,8 +26,9 @@ class profile::riak::cluster (
 		if $riak_hostname == $riak_hostname_first {
 			include profile::riak::stanchion
 			include profile::riak::cluster::primary
+			include profile::riak::cluster::admin_user
 			Service['riak'] -> Service['stanchion']
-			Service['riak'] -> Class['profile::riak::cluster::primary']
+			Service['riak'] -> Class['profile::riak::cluster::primary'] -> Class['profile::riak::cluster::admin_user']
 		} else {
 			include profile::riak::cluster::member
 			Service['riak'] -> Class['profile::riak::cluster::member']

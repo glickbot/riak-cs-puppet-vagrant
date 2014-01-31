@@ -21,9 +21,6 @@ class profile::riak::riak_cs (
     version               => $riakcs_version,
     service_autorestart   => false,
     ulimit_etc_default    => true,
-    # use the following to create the user
-    #riak escript /usr/sbin/create_cs_user admin mn766s@att.com
-    #MTCJNUVLE8R4GQNNDNC1 "nslAllQMx1IUN6cXnJOJa3a3eK9Byua-P0jGVQ==" admin
     cfg                   => {
       riak_cs             => {
         cs_ip             => $riakcs_address,

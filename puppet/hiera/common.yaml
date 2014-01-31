@@ -5,6 +5,12 @@
 #  - 'Value1 : Common'
 #  - 'Value2 : Common'
 
+profile::riak::cluster::admin_user::user_id: admin
+profile::riak::cluster::admin_user::user_name: Administrator
+profile::riak::cluster::admin_user::user_email: admin@basho.com
+profile::riak::cluster::admin_user::user_key: MTCJNUVLE8R4GQNNDNC1
+profile::riak::cluster::admin_user::user_secret: nslAllQMx1IUN6cXnJOJa3a3eK9Byua-P0jGVQ==
+
 profile::riak::cluster::clusters:
   cluster1:
     - node1.yeti
