@@ -2,3 +2,7 @@
 puppet/graphs/*
 system/etc/hosts.d/*
 *.swp
+*.lock
+.tmp
+puppet/modules/riak
+puppet/modules/stdlib
