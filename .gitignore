@@ -4,5 +4,8 @@ system/etc/hosts.d/*
 *.swp
 *.lock
 .tmp
+screenlog.0
 puppet/modules/riak
 puppet/modules/stdlib
+puppet/modules/apt
+puppet/modules/limits
