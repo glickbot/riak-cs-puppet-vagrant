@@ -10,7 +10,7 @@ class profile::riak::cluster (
   	file { '/usr/local/bin/riak_puppet_helper':
     	ensure  => present,
     	mode    => '0755',
-    	content => template('profile/riak_puppet_helper.erb')
+    	content => template('profile/riak/riak_puppet_helper.erb')
   	}
 	notice("This node is a member of ${member_of}")
 	if size($member_of) < 1 {
