@@ -9,3 +9,4 @@ puppet/modules/riak
 puppet/modules/stdlib
 puppet/modules/apt
 puppet/modules/limits
+.DS_Store
